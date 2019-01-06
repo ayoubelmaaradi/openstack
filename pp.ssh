@@ -1,0 +1,11 @@
+
+systemctl disable firewalld
+systemctl stop firewalld
+systemctl disable NetworkManager
+systemctl stop NetworkManager
+systemctl enable network
+systemctl start network
+yum install -y centos-release-openstack-liberty
+yum update -y
+yum install -y openstack-packstack
+packstack --allinone --default-password="root123"
